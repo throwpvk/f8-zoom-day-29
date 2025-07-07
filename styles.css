@@ -52,6 +52,7 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   padding-bottom: 40px;
+  cursor: pointer;
 }
 
 .product-card:hover {

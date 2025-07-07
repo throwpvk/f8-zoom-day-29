@@ -1,33 +1,36 @@
 const productsGrid = document.querySelector(".product-grid");
 productsGrid.innerHTML = "";
-const allProcductData = fetch("https://dummyjson.com/products")
+const allproductData = fetch("https://dummyjson.com/products")
   .then((res) => res.json())
   .then((data) => {
-    data.products.forEach((procduct) => {
-      const procductCard = document.createElement("div");
-      procductCard.className = "product-card";
-      procductCard.innerHTML = `
+    data.products.forEach((product) => {
+      const productCard = document.createElement("div");
+      productCard.className = "product-card";
+      productCard.innerHTML = `
       <img
-            src="${procduct.thumbnail}"
+            src="${product.thumbnail}"
             class="product-image"
-            alt="${procduct.title}"
+            alt="${product.title}"
           />
           <div class="product-info">
-            <h2 class="product-title">${procduct.title}</h2>
-            <p class="product-price">$${procduct.price}</p>
+            <h2 class="product-title">${product.title}</h2>
+            <p class="product-price">$${product.price}</p>
             <div class="product-rating">
               <i class="fas fa-star"></i>
-              <span>${procduct.rating} (${procduct.reviews.length} reviews)</span>
+              <span>${product.rating} (${product.reviews.length} reviews)</span>
             </div>
             <p class="product-description">
-              ${procduct.description}
+              ${product.description}
             </p>
             <div class="product-button">
-              <a href="detail.html?id=${procduct.id}">View Details</a>
+              <a href="detail.html?id=${product.id}">View Details</a>
             </div>
           </div>
       `;
 
-      productsGrid.appendChild(procductCard);
+      productCard.addEventListener("click", () => {
+        window.location.href = `detail.html?id=${product.id}`;
+      });
+      productsGrid.appendChild(productCard);
     });
   });
