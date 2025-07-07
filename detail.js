@@ -19,6 +19,9 @@ const procductData = fetch(`https://dummyjson.com/products/${productId}`)
           <p class="product-description">
             ${data.description} 
           </p>
+          <div class="product-button">
+            <a href="#">Add to Cart <i class="fa-solid fa-cart-plus" style="margin-left: 5px;"></i></a>
+          </div>
           <div class="product-meta">
             <p><span>Category:</span> ${data.category}</p>
             <p><span>Brand:</span> ${data.brand}</p>
@@ -36,9 +39,6 @@ const procductData = fetch(`https://dummyjson.com/products/${productId}`)
           <div class="product-reviews">
             <h3>Customer Reviews</h3>
             ${getReviews(data.reviews)}
-          </div>
-          <div class="product-button">
-            <a href="#">Add to Cart</a>
           </div>
         </div>
       `;

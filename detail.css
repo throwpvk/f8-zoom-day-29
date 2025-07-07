@@ -152,11 +152,11 @@ body {
 }
 
 .product-button {
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 .product-button a {
-  background: #6e8efb;
+  background: #f36464;
   color: white;
   padding: 12px 20px;
   border-radius: 5px;
@@ -168,7 +168,7 @@ body {
 }
 
 .product-button a:hover {
-  background: #5a78e3;
+  background: #be1f1f;
 }
 
 /* Responsive Design */
